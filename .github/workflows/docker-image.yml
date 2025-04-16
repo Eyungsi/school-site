@@ -31,5 +31,5 @@ jobs:
           key: ${{secrets.KEY}}
           script: |
             docker stop myschoolapp || echo ""
-            docker rm resume || echo ""
+            docker rm myschoolapp || echo ""
             docker run -d --name myschoolapp -p 8080:80 ${{secrets.USERNAME}}/myschoolapp-site:${{github.run_number}}
